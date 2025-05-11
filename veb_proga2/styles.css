@@ -1,0 +1,336 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.accordion {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-btn {
+    background-color: #f1f1f1;
+    color: #333;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.accordion-btn:hover {
+    background-color: #ddd;
+}
+
+.accordion-content {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: white;
+}
+
+.accordion-content.active {
+    max-height: 1000px;
+    padding: 15px;
+    transition: max-height 0.5s ease-in;
+}
+
+/* Задание 1: Дата и время */
+#datetime {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+/* Задание 2: Календарь */
+#calendar {
+    font-family: Arial, sans-serif;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.calendar-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 5px;
+}
+
+.calendar-weekdays div {
+    font-weight: bold;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day {
+    padding: 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.calendar-day.weekend {
+    background-color: #f8f8f8;
+    color: #d9534f;
+}
+
+.calendar-day:hover {
+    background-color: #e9e9e9;
+}
+
+/* Задание 3: Нахождение элементов в DOM */
+#dom-elements {
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+/* Задание 4: Изменение объекта */
+.change-block {
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #e3f2fd;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+/* Задание 5: Создание элемента */
+#list-container {
+    margin-top: 15px;
+}
+
+.dynamic-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dynamic-list li {
+    padding: 8px;
+    margin: 5px 0;
+    background-color: #e8f5e9;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dynamic-list li button {
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 2px 8px;
+    cursor: pointer;
+}
+
+/* Задание 6: Обработка события */
+#event-container {
+    margin-top: 15px;
+    min-height: 100px;
+    border: 1px dashed #ccc;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-item {
+    padding: 15px;
+    background-color: #bbdefb;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+/* Задание 7: Раскрывающееся меню */
+#sweets-menu {
+    list-style-type: none;
+    padding: 0;
+    width: 200px;
+}
+
+.menu-title {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.submenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.submenu li {
+    padding: 8px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.submenu li:hover {
+    background-color: #ddd;
+}
+
+#sweets-message {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+/* Задание 8: Эффект при наведении */
+.container {
+    position: relative;
+    display: inline-block;
+    width: 350px; /* Ширина контейнера равна ширине изображения */
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.container:hover .image {
+    opacity: 0.7;
+}
+
+.container:hover .text {
+    opacity: 1;
+}
+
+/* Задание 9-10: Формы */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Задание 11: Игра */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+    width: 310px;
+}
+
+.game-cell {
+    width: 100px;
+    height: 100px;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.game-cell:hover {
+    background-color: #e1e1e1;
+}
+
+#game-status {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+    text-align: center;
+}
+
+#reset-game {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+}
+
+#reset-game:hover {
+    background-color: #d32f2f;
+}

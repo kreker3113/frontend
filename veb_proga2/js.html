@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript задания</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JavaScript задания</h1>
+
+    <!-- Задание 1: Дата и время -->
+    <div class="accordion">
+        <button class="accordion-btn">1. Дата и время</button>
+        <div class="accordion-content">
+            <div id="datetime"></div>
+        </div>
+    </div>
+
+    <!-- Задание 2: Календарь -->
+    <div class="accordion">
+        <button class="accordion-btn">2. Календарь</button>
+        <div class="accordion-content">
+            <div id="calendar"></div>
+        </div>
+    </div>
+
+    <!-- Задание 3: Нахождение элементов в DOM -->
+    <div class="accordion">
+        <button class="accordion-btn">3. Нахождение элементов в DOM</button>
+        <div class="accordion-content">
+            <div id="dom-elements"></div>
+        </div>
+    </div>
+
+    <!-- Задание 4: Изменение объекта -->
+    <div class="accordion">
+        <button class="accordion-btn">4. Изменение объекта</button>
+        <div class="accordion-content">
+            <div id="object-change">
+                <div class="change-block" id="block1">Блок 1</div>
+                <div class="change-block" id="block2">Блок 2</div>
+                <div class="change-block" id="block3">Блок 3</div>
+                <div class="change-block" id="block4">Блок 4</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Задание 5: Создание элемента -->
+    <div class="accordion">
+        <button class="accordion-btn">5. Создание элемента</button>
+        <div class="accordion-content">
+            <button id="create-list-btn">Создать список</button>
+            <div id="list-container"></div>
+        </div>
+    </div>
+
+    <!-- Задание 6: Обработка события -->
+    <div class="accordion">
+        <button class="accordion-btn">6. Обработка события</button>
+        <div class="accordion-content">
+            <button id="event-btn">Показать следующий элемент</button>
+            <div id="event-container"></div>
+        </div>
+    </div>
+
+    <!-- Задание 7: Раскрывающееся меню -->
+    <div class="accordion">
+        <button class="accordion-btn">7. Раскрывающееся меню </button>
+        <div class="accordion-content">
+            <ul id="sweets-menu">
+                <li class="menu-title">Сладости ▼</li>
+                <ul class="submenu">
+                    <li>Шоколад</li>
+                    <li>Мармелад</li>
+                    <li>Печенье</li>
+                    <li>Пирожное</li>
+                </ul>
+            </ul>
+            <div id="sweets-message"></div>
+        </div>
+    </div>
+
+    <!-- Задание 8: Эффект при наведении -->
+    <div class="accordion">
+        <button class="accordion-btn">8. Эффект при наведении</button>
+        <div class="accordion-content">
+            <div class="container">
+                <img src="https://th.bing.com/th/id/R.b9f960086df0ebf47368139eb3496445?rik=VJMMmgeQZbJCRA&pid=ImgRaw&r=0" alt="Картинка" class="image">
+                <div class="text">Привет, мир!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Задание 9: Регулярные выражения -->
+    <div class="accordion">
+        <button class="accordion-btn">9. Регулярные выражения </button>
+        <div class="accordion-content">
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Задание 10: Обработчик формы -->
+    <div class="accordion">
+        <button class="accordion-btn">10. Обработчик формы </button>
+        <div class="accordion-content">
+            <form id="extended-form">
+                <div class="form-group">
+                    <label for="login">Логин:</label>
+                    <input type="text" id="login" name="login">
+                    <span class="error-message" id="login-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password">
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Подтвердите пароль:</label>
+                    <input type="password" id="confirm-password" name="confirm-password">
+                    <span class="error-message" id="confirm-password-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="full-name">ФИО:</label>
+                    <input type="text" id="full-name" name="full-name">
+                    <span class="error-message" id="full-name-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="text" id="phone" name="phone">
+                    <span class="error-message" id="phone-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="birthdate">Дата рождения:</label>
+                    <input type="text" id="birthdate" name="birthdate">
+                    <span class="error-message" id="birthdate-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="faculty">Факультет:</label>
+                    <input type="text" id="faculty" name="faculty">
+                    <span class="error-message" id="faculty-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="department">Кафедра:</label>
+                    <input type="text" id="department" name="department">
+                    <span class="error-message" id="department-error"></span>
+                </div>
+                <button type="submit">Отправить</button>
+            </form>
+            <div id="form-result"></div>
+        </div>
+    </div>
+
+    <!-- Задание 11: Игра -->
+    <div class="accordion">
+        <button class="accordion-btn">11. Игра </button>
+        <div class="accordion-content">
+            <div id="game-container">
+                <h2>Крестики-нолики</h2>
+                <div id="game-board"></div>
+                <div id="game-status"></div>
+                <button id="reset-game">Начать заново</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

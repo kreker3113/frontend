@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head> 
+    <meta charset="UTF-8">
+    <title>Планировщик задач</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .task-form { margin-bottom: 20px; }
+        .task-list { border: 1px solid #ccc; padding: 10px; }
+        .task-item { margin: 5px 0; }
+        .error { color: red; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="task-form">
+        <h2>Добавить задачу</h2>
+        <form id="taskForm">
+            <label>Название задачи:</label><br>
+            <input type="text" id="taskName" name="taskName" required><br>
+            <label>Описание:</label><br>
+            <textarea id="taskDescription" name="taskDescription" required></textarea><br>
+            <button type="submit">Добавить задачу</button>
+        </form>
+        <div id="error" class="error"></div>
+    </div>
+    <div class="task-list">
+        <h2>Список задач</h2>
+        <div id="taskList"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Загрузка списка задач при открытии страницы
+            loadTasks();
+
+            // Обработка отправки формы
+            $('#taskForm').submit(function(event) {
+                event.preventDefault();
+                let taskName = $('#taskName').val();
+                let taskDescription = $('#taskDescription').val();
+
+                $.ajax({
+                    url: 'add_task.php',
+                    type: 'POST',
+                    data: { taskName: taskName, taskDescription: taskDescription },
+                    success: function(response) {
+                        if (response.success) {
+                            $('#error').text('');
+                            $('#taskForm')[0].reset(); // Очистка формы
+                            loadTasks(); // Обновление списка задач
+                        } else {
+                            $('#error').text('Ошибка: ' + response.error);
+                        }
+                    },
+                    error: function() {
+                        $('#error').text('Ошибка соединения с сервером');
+                    }
+                });
+            });
+
+            // Функция для загрузки списка задач
+            function loadTasks() {
+                $.ajax({
+                    url: 'get_tasks.php',
+                    type: 'GET',
+                    success: function(response) {
+                        let tasks = response.tasks;
+                        let taskList = $('#taskList');
+                        taskList.empty();
+                        if (tasks.length > 0) {
+                            tasks.forEach(function(task) {
+                                taskList.append(
+                                    `<div class="task-item"><strong>${task.name}</strong>: ${task.description}</div>`
+                                );
+                            });
+                        } else {
+                            taskList.append('<p>Задачи отсутствуют</p>');
+                        }
+                    },
+                    error: function() {
+                        $('#error').text('Ошибка загрузки списка задач');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
